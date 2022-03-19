@@ -1,0 +1,49 @@
+<div class="container animated fadeIn fast">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form (ngSubmit)="save(productoForm)" #productoForm="ngForm">
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="nomProducto" class="form-label">Nombre</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="nombrespan">
+                                      <i class="fa-solid fa-gift"></i>
+                                    </span>
+                                    <input type="text " id="nomProducto " class="form-control" name="nombre" aria-describedby="nombrespan" [(ngModel)]="producto.nombre" placeholder=" Cuaderno " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="desProducto" class="form-label">Descripción</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="descripcionspan">
+                                      <i class="fa-solid fa-table-list"></i>
+                                    </span>
+                                    <input type="text " id="desProducto " class="form-control" name="descripcion" aria-describedby="descripcionspan" [(ngModel)]="producto.descripcion" placeholder=" Producto xyz " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="preProducto" class="form-label">Precio</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text">
+                                      <i class="fa-solid fa-coins"></i>
+                                  </span>
+                                    <input type="text" data-bs-toggle="tooltip" data-bs-placement="top" id="preProducto " class="form-control" name="precio" aria-describedby="preciospan" [(ngModel)]="producto.precio" placeholder="00.00" mask="separator.2" separatorLimit="10000" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button " class="btn btn-secondary " data-bs-dismiss="modal " routerLinkActive="true" [routerLink]="[producto.id > 0 ? '../../../productos' : '../../productos']">Regresar</button>
+                            <button type="submit " class="btn btn-primary ">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

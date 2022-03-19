@@ -1,0 +1,66 @@
+<div class="container animated fadeIn fast">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form (ngSubmit)="save(ordenForm)" #ordenForm="ngForm">
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="nomOrden" class="form-label">Cliente</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text">
+                                      <i class="fa-solid fa-user-pen "></i>
+                                    </span>
+                                    <select class="form-select form-control" name="idCliente" id="idpOrden " [(ngModel)]="orden.idCliente" required>
+                                      <option [value]="c.id" *ngFor="let c of clientes">{{c.nombre}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="idpOrden" class="form-label">Producto</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="idProductospan">
+                                      <i class="fa-solid fa-signature"></i>
+                                    </span>
+                                    <select class="form-select form-control" name="idProducto" id="idcOrden " [(ngModel)]="orden.idProducto" required>
+                                      <option [value]="p.id" *ngFor="let p of productos"  >{{p.nombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="canOrden" class="form-label">Cantidad</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text">
+                                      <i class="fas fa-mobile-alt"></i>
+                                  </span>
+                                    <input type="text " data-bs-toggle="tooltip" data-bs-placement="top" title="Debe iniciar con 2, 6 o 7" id="canOrden " class="form-control " name="cantidad" aria-describedby="cantidadspan" [(ngModel)]="orden.cantidad" placeholder="00" separatorLimit="10000"
+                                        thousandSeparator="," mask="separator.0" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="fecOrden" class="form-label">Fecha</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="fechaspan">
+                                      <i class="fas fa-at"></i>
+                                  </span>
+                                    <input type="text" mask="d0/M0/0000" [leadZeroDateTime]="true" id="fecOrden " class="form-control " data-bs-placement="top" aria-describedby=" fechaspan " name="fecha " [(ngModel)]="orden.fecha" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button " class="btn btn-secondary " data-bs-dismiss="modal " routerLinkActive="true" [routerLink]="[orden.id > 0 ? '../../../ordenes' : '../../ordenes']">Regresar</button>
+                            <button type="submit " class="btn btn-primary ">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

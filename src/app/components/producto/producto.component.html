@@ -1,0 +1,66 @@
+<br>
+<h1>Productos</h1>
+<hr>
+<router-outlet (activate)="showTable()" (deactivate)='hideTable()'></router-outlet>
+<div *ngIf="!hideParent">
+    <div class="row">
+        <div class="col-md-12 text-left">
+            <button type="button " class="btn btn-secondary  me-md-2" [routerLink]="['/mi-tienda']">Regresar</button>
+            <button type="button" class="btn btn-outline-primary" name="button" routerLinkActive="active" [routerLink]="['agregar']">Agregar +</button>
+        </div>
+    </div>
+    <hr>
+    <div class=" row animated fadeIn fast">
+        <div class="col-md-12">
+            <div class="table-responsive ">
+                <table class="table ">
+                    <thead class="table-dark ">
+                        <tr>
+                            <th scope="col ">Nombre</th>
+                            <th scope="col ">Descripción</th>
+                            <th scope="col ">Precio</th>
+                            <th scope="col ">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of productos | objlist; let i = index ">
+                            <th scope="row ">{{productos[c].nombre}}</th>
+                            <td>{{productos[c].descripcion}}</td>
+                            <td>{{productos[c].precio | currency}}</td>
+
+                            <td>
+                                <button type="button " [routerLink]="['mostrar',productos[c].id]" class="btn btn-outline-success me-md-2">
+                            <i class="fa-solid fa-user-pen "></i>
+                          </button>
+                                <button type="button " class="btn btn-outline-danger " (click)="setProductInfo(productos[c], i)" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                            <i class="fa-solid fa-trash-can"></i>
+                          </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Eliminar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Está a punto de eliminar al cliente {{producto.nombre}}
+                    <br>
+                    <br> ¿Seguro que desea continuar?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteProducto()">Sí, Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>

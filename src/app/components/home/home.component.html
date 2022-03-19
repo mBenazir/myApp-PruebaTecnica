@@ -1,0 +1,15 @@
+<br>
+<br>
+<div class="card border-secondary mb-12" style="max-height: 50rem;">
+    <div class="card-header">Bienvenido</div>
+    <div class="card-body text-secondary">
+        <h5 class="card-title">Pantalla principal</h5>
+        <p class="card-text">Aquí podrás darle mantenimiento clientes, productos y órdenes.</p>
+        <button type="button" class="btn btn-outline-primary me-md-2" name="button" [routerLink]="['clientes']">Clientes</button>
+        <button type="button" class="btn btn-outline-primary me-md-2" name="button" [routerLink]="['productos']">productos</button>
+        <button type="button" class="btn btn-outline-primary me-md-2" name="button" [routerLink]="['ordenes']">Órdenes</button>
+        <br>
+        <router-outlet></router-outlet>
+        <div id="liveAlertPlaceholder" class=" me-md-2"></div>
+    </div>
+</div>

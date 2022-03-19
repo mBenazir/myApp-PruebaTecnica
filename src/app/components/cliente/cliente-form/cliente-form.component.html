@@ -1,0 +1,73 @@
+<div class="container animated fadeIn fast">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form (ngSubmit)="save(clienteForm)" #clienteForm="ngForm">
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="nomCliente" class="form-label">Nombre</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="nombrespan">
+                                      <i class="fa-solid fa-user-pen "></i>
+                                    </span>
+                                    <input type="text " id="nomCliente " class="form-control" name="nombre" aria-describedby="nombrespan" [(ngModel)]="cliente.nombre" placeholder=" Juan " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="apeCliente" class="form-label">Apellidos</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="apellidospan">
+                                      <i class="fa-solid fa-signature"></i>
+                                    </span>
+                                    <input type="text " id="apeCliente " class="form-control" name="apellido" aria-describedby="apellidospan" [(ngModel)]="cliente.apellido" placeholder=" Pérez " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="telCliente" class="form-label">Teléfono</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text">
+                                      <i class="fas fa-mobile-alt"></i>
+                                  </span>
+                                    <input type="text " data-bs-toggle="tooltip" data-bs-placement="top" title="Debe iniciar con 2, 6 o 7" id="telCliente " class="form-control " name="telefono" aria-describedby="telefonospan" [(ngModel)]="cliente.telefono" placeholder="00000-00000" pattern="(2|6|7)?([0-9][-]*){7}$"
+                                        mask="0000-0000" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12">
+                                <label for="corCliente" class="form-label">Correo</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="correospan">
+                                      <i class="fas fa-at"></i>
+                                  </span>
+                                    <input type="text " id="corCliente " class="form-control " data-bs-placement="top" title="Debe tener un formato abcd@mail.com" aria-describedby=" correospan " name="correo " [(ngModel)]="cliente.correo " placeholder="abcd@mail.com " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" form-group ">
+                            <div class="col-md-12 ">
+                                <label for="nitCliente " class="form-label ">NIT</label>
+                                <div class="input-group has-validation ">
+                                    <span class="input-group-text ">
+                                      <i class="fas fa-id-card "></i>
+                                  </span>
+                                    <input type="text " id="nitCliente " class="form-control " name="nit " [(ngModel)]="cliente.nit " aria-describedby="nitspan " placeholder="0000-000000-000-0 " required mask="0000-000000-000-0 ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button " class="btn btn-secondary " data-bs-dismiss="modal " routerLinkActive="true" [routerLink]="[cliente.id > 0 ? '../../../clientes' : '../../clientes']">Regresar</button>
+                            <button type="submit " class="btn btn-primary ">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+{
+  "clientes": [
+    {
+      "id": 4,
+      "nombre": "Made",
+      "apellido": "Wu",
+      "telefono": "28581000",
+      "correo": "asd@asd.com",
+      "nit": "11111111111111"
+    },
+    {
+      "id": 5,
+      "nombre": "Alma",
+      "apellido": "Berríos",
+      "telefono": "75810000",
+      "correo": "asd@asd.com",
+      "nit": "11111111111111"
+    },
+    {
+      "id": 8,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "telefono": "23132312",
+      "correo": "asd@asd.com",
+      "nit": "12313123123123"
+    },
+    {
+      "nombre": "Karina",
+      "apellido": "López",
+      "telefono": "66658100",
+      "correo": "madebenazi@gmail.com",
+      "nit": "11111111111111",
+      "id": 9
+    }
+  ],
+  "ordenes": [
+    {
+      "idProducto": 2,
+      "idCliente": 8,
+      "id": 1,
+      "cantidad": 1,
+      "fecha": "12/06/1995"
+    },
+    {
+      "idProducto": 1,
+      "idCliente": 8,
+      "cantidad": 4,
+      "fecha": "18/03/2022",
+      "id": 2
+    },
+    {
+      "idProducto": "2",
+      "idCliente": "8",
+      "cantidad": "50",
+      "fecha": "18/3/2022",
+      "id": 3
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Lápiz",
+      "descripcion": "Lápiz Facela",
+      "precio": 0.25
+    },
+    {
+      "id": 2,
+      "nombre": "Bolígrafo",
+      "descripcion": "Bolígrafo Facela",
+      "precio": 0.35
+    }
+  ]
+}
